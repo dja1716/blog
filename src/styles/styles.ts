@@ -12,3 +12,5 @@ export const GlobalStyles = createGlobalStyle`
         color: #12121D;
     }
 `;
+
+export const AppContainer = styled.div``;
