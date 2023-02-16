@@ -3,27 +3,23 @@ import logo from "./logo.svg";
 import "./App.css";
 import { PortalProvider } from "./providers/PortalProvider";
 import { HelmetProvider } from "react-helmet-async";
+import { AppContainer, GlobalStyles } from "./styles/styles";
+import { Route, Routes } from "react-router-dom";
+import { routes } from "./routes";
+import Home from "./pages/Home";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
     <PortalProvider>
       <HelmetProvider>
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              Edit <code>src/App.tsx</code> and save to reload.
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
-        </div>
+        <GlobalStyles />
+        <AppContainer>
+          <Routes>
+            <Route path={routes.root} element={<Home />} />
+            <Route path={"*"} element={<NotFoundPage />} />
+          </Routes>
+        </AppContainer>
       </HelmetProvider>
     </PortalProvider>
   );
