@@ -1,9 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { PortalProvider } from './providers/PortalProvider';
+import { HelmetProvider } from 'react-helmet-async';
 
 function App() {
   return (
+
+    <PortalProvider>
+      <HelmetProvider>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -20,6 +25,10 @@ function App() {
         </a>
       </header>
     </div>
+
+     </HelmetProvider>
+     </PortalProvider>
+     
   );
 }
 
