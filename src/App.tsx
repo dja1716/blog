@@ -14,7 +14,7 @@ import MNotFoundPage from "./pages/Mobile/MNotFoundPage";
 
 function App() {
   const isPC = useMediaQuery({
-    query: "(min-width : 1024px)",
+    query: "(min-width : 600px)",
   });
   return (
     <PortalProvider>
