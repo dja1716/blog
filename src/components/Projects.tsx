@@ -4,6 +4,7 @@ import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import { Col, Container, Nav, Row, Tab } from "react-bootstrap";
+import ProjectCard from "./ProjectCard";
 
 type Props = {};
 
@@ -75,7 +76,7 @@ function Projects({}: Props) {
                 <Tab.Pane eventKey="first">
                   <Row>
                     {projects.map((project, index) => {
-                      return <p>{project.title}</p>;
+                      return <ProjectCard key={index} {...project} />;
                     })}
                   </Row>
                 </Tab.Pane>
@@ -86,6 +87,7 @@ function Projects({}: Props) {
           </Col>
         </Row>
       </Container>
+      <img className="background-image-right" src={colorSharp2} />
     </section>
   );
 }
