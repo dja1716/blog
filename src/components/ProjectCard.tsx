@@ -1,4 +1,5 @@
 import React from "react";
+import { Col } from "react-bootstrap";
 
 type Props = {
   title: string;
@@ -7,5 +8,15 @@ type Props = {
 };
 
 export default function ProjectCard({ title, description, imgUrl }: Props) {
-  return <div>ProjectCard</div>;
+  return (
+    <Col sm={6} md={4}>
+      <div className="proj-imgbx">
+        <img src={imgUrl} />
+        <div className="proj-txtx">
+          <h4>{title}</h4>
+          <span>{description}</span>
+        </div>
+      </div>
+    </Col>
+  );
 }
