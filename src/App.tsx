@@ -11,6 +11,10 @@ import NotFoundPage from "./pages/PC/NotFoundPage";
 import { useMediaQuery } from "react-responsive";
 import MHome from "./pages/Mobile/MHome";
 import MNotFoundPage from "./pages/Mobile/MNotFoundPage";
+import NavBar from "./components/NavBar";
+import Banner from "./components/Banner";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
 
 function App() {
   const isPC = useMediaQuery({
@@ -19,7 +23,7 @@ function App() {
   return (
     <PortalProvider>
       <HelmetProvider>
-        <GlobalStyles />
+        {/* <GlobalStyles />
         <AppContainer>
           {isPC ? (
             <Routes>
@@ -32,7 +36,11 @@ function App() {
               <Route path={"*"} element={<MNotFoundPage />} />
             </Routes>
           )}
-        </AppContainer>
+        </AppContainer> */}
+        <NavBar />
+        <Banner />
+        <Skills />
+        <Projects />
       </HelmetProvider>
     </PortalProvider>
   );
